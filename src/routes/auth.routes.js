@@ -8,9 +8,28 @@ const AuthStack = createNativeStackNavigator();
 function AuthRoutes() {
   return (
     <AuthStack.Navigator>
-      <AuthStack.Screen name="SignIn" component={SignIn} />
+      <AuthStack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{
+          headerShown: false,
+        }}
+      />
 
-      <AuthStack.Screen name="SignUp" component={SignUn} />
+      <AuthStack.Screen
+        name="SignUp"
+        component={SignUn}
+        options={{
+          headerStyle: {
+            backgroundColor: '#56ab48',
+            borderBottomWidth: 1,
+            borderBottomColor: '#fff',
+          },
+          headerTintColor: '#fff',
+          headerTitle: 'Voltar',
+          headerBackTitleVisible: false,
+        }}
+      />
     </AuthStack.Navigator>
   );
 }
