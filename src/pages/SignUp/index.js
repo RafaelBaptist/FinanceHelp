@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Platform} from 'react-native';
 import {
   Background,
   Container,
@@ -8,9 +8,13 @@ import {
   SubmitButtom,
   SubmitText,
 } from '../SignIn/styles';
-import {Platform} from 'react-native';
+import DarkModeToggle from '../../theme/DarkModeToggle';
+import {useTheme} from '../../theme/ThemeContext';
 
 export default function SignUn() {
+  const {theme} = useTheme();
+  xto;
+
   return (
     <Background>
       <Container behavior={Platform.OS === 'ios' ? 'padding' : ''} enabled>
@@ -30,6 +34,7 @@ export default function SignUn() {
           <SubmitText>Cadastrar</SubmitText>
         </SubmitButtom>
       </Container>
+      <DarkModeToggle />
     </Background>
   );
 }
