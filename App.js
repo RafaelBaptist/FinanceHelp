@@ -8,7 +8,6 @@ import {useTheme} from './src/theme/ThemeContext';
 
 const AppContent = () => {
   const {theme} = useTheme();
-  o;
 
   return (
     <StyledThemeProvider theme={theme}>

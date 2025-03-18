@@ -13,7 +13,6 @@ import {useTheme} from '../../theme/ThemeContext';
 
 export default function SignUn() {
   const {theme} = useTheme();
-  xto;
 
   return (
     <Background>
