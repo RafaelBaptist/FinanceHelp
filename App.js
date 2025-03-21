@@ -6,17 +6,21 @@ import {ThemeProvider} from './src/theme/ThemeContext';
 import Routes from './src/routes';
 import {useTheme} from './src/theme/ThemeContext';
 
+import AuthProvider from './src/contexts/auth';
+
 const AppContent = () => {
   const {theme} = useTheme();
 
   return (
     <StyledThemeProvider theme={theme}>
       <NavigationContainer>
-        <StatusBar
-          backgroundColor={theme.statusBarBackground}
-          barStyle={theme.statusBarStyle}
-        />
-        <Routes />
+        <AuthProvider>
+          <StatusBar
+            backgroundColor={theme.statusBarBackground}
+            barStyle={theme.statusBarStyle}
+          />
+          <Routes />
+        </AuthProvider>
       </NavigationContainer>
     </StyledThemeProvider>
   );

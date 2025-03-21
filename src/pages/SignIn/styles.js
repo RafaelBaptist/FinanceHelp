@@ -20,7 +20,9 @@ export const AreaInput = styled.View`
   flex-direction: row;
 `;
 
-export const Input = styled.TextInput`
+export const Input = styled.TextInput.attrs(({theme}) => ({
+  placeholderTextColor: theme.colors.inputText,
+}))`
   background-color: ${({theme}) => theme.colors.inputBackground};
   width: 90%;
   font-size: 17px;

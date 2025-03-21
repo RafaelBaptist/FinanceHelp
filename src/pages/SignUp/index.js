@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, Platform} from 'react-native';
+import React, {useContext, useState} from 'react';
+import {Platform, Alert} from 'react-native';
 import {
   Background,
   Container,
@@ -10,26 +10,48 @@ import {
 } from '../SignIn/styles';
 import DarkModeToggle from '../../theme/DarkModeToggle';
 import {useTheme} from '../../theme/ThemeContext';
+import {AuthContext} from '../../contexts/auth';
 
-export default function SignUn() {
+export default function SignUp() {
+  const {signUp} = useContext(AuthContext);
   const {theme} = useTheme();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  function handleSignUp() {
+    signUp(email, password, name);
+  }
 
   return (
     <Background>
       <Container behavior={Platform.OS === 'ios' ? 'padding' : ''} enabled>
         <AreaInput>
-          <Input placeholder="Seu nome" />
+          <Input
+            placeholder="Seu nome"
+            value={name}
+            onChangeText={text => setName(text)}
+          />
         </AreaInput>
 
         <AreaInput>
-          <Input placeholder="Seu email" />
+          <Input
+            placeholder="Seu email"
+            value={email}
+            onChangeText={text => setEmail(text)}
+          />
         </AreaInput>
 
         <AreaInput>
-          <Input placeholder="Sua senha" />
+          <Input
+            placeholder="Sua senha"
+            value={password}
+            onChangeText={text => setPassword(text)}
+            secureTextEntry={true}
+          />
         </AreaInput>
 
-        <SubmitButtom>
+        <SubmitButtom onPress={handleSignUp}>
           <SubmitText>Cadastrar</SubmitText>
         </SubmitButtom>
       </Container>
