@@ -13,7 +13,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   colors: {
-    background: '#000000',
+    background: '#0d0e13',
     inputBackground: '#1e1e1e',
     inputText: '#ffffff',
     buttonBackground: '#005732',

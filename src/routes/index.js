@@ -6,6 +6,7 @@ import {AuthContext} from '../contexts/auth';
 import {darkTheme, lightTheme} from '../theme/themes';
 import DarkModeToggle from '../theme/DarkModeToggle';
 import {useTheme} from '../theme/ThemeContext';
+
 function Routes() {
   const {signed, loading} = useContext(AuthContext);
   const {theme} = useTheme();
