@@ -8,6 +8,8 @@ export const lightTheme = {
     buttonText: '#fff',
     linkText: '#005732',
     statusBarStyle: 'dark-content',
+    buttonBackgroundReceive: '#e7e7e7',
+    buttonBackgroundReceiveInactive: '#fcf7f7',
   },
 };
 
@@ -20,5 +22,7 @@ export const darkTheme = {
     buttonText: '#ffffff',
     linkText: '#56ab48',
     statusBarStyle: 'light-content',
+    buttonBackgroundReceive: '#232a5b',
+    buttonBackgroundReceiveInactive: '#1a1e3d',
   },
 };
