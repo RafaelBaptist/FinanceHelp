@@ -3,6 +3,8 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import DarkModeToggle from '../theme/DarkModeToggle';
 import Home from '../pages/Home';
 import {useTheme} from '../theme/ThemeContext';
+import New from '../Components/New';
+
 const AppDrawer = createDrawerNavigator();
 
 function AppRoutes() {
@@ -21,8 +23,11 @@ function AppRoutes() {
         },
         drawerActiveBackgroundColor: '#56ab48',
         drawerActiveTintColor: theme.colors.inputText,
+        drawerInactiveTintColor: theme.colors.inputText,
+        drawerInactiveBackgroundColor: 'transparent',
       }}>
       <AppDrawer.Screen name="Home" component={Home} />
+      <AppDrawer.Screen name="Registrar" component={New} />
     </AppDrawer.Navigator>
   );
 }

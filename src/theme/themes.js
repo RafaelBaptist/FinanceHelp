@@ -14,7 +14,7 @@ export const lightTheme = {
 export const darkTheme = {
   colors: {
     background: '#0d0e13',
-    inputBackground: '#1e1e1e',
+    inputBackground: '#272b3d',
     inputText: '#ffffff',
     buttonBackground: '#005732',
     buttonText: '#ffffff',
