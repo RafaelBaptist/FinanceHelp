@@ -10,6 +10,7 @@ export const lightTheme = {
     statusBarStyle: 'dark-content',
     buttonBackgroundReceive: '#e7e7e7',
     buttonBackgroundReceiveInactive: '#fcf7f7',
+    backgroundReceive: '#fff',
   },
 };
 
@@ -24,5 +25,6 @@ export const darkTheme = {
     statusBarStyle: 'light-content',
     buttonBackgroundReceive: '#232a5b',
     buttonBackgroundReceiveInactive: '#1a1e3d',
+    backgroundReceive: '#1a1c26',
   },
 };
