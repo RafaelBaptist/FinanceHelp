@@ -16,7 +16,7 @@ export default function BalanceItem({data}) {
     } else {
       return {
         label: 'Saídas',
-        color: 'EF463a',
+        color: 'DC143C',
       };
     }
   }, [data]);

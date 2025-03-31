@@ -22,7 +22,7 @@ export const TypeText = styled.Text`
 export const IconView = styled.View`
   flex-direction: row;
   background-color: ${props =>
-    props.tipo === 'despesa' ? ' #c62c36' : '#049301'};
+    props.tipo === 'despesa' ? ' #DC143C' : '#049301'};
   padding-bottom: 4px;
   padding-top: 4px;
   padding-left: 8px;
