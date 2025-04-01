@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   StyleSheet,
+  Modal,
 } from 'react-native';
 import {AuthContext} from '../../contexts/auth';
 import {Background, ListBalance, Area, Title, List} from './styles';
@@ -16,7 +17,7 @@ import {format} from 'date-fns';
 import {useIsFocused} from '@react-navigation/native';
 import BalanceItem from '../../Components/BalanceItem';
 import HistoryList from '../../Components/List';
-
+import CalendarModal from '../../Components/CalendarModal';
 export default function Home() {
   const isFocused = useIsFocused();
   const [listBalance, setListBalance] = useState([]);
@@ -24,12 +25,14 @@ export default function Home() {
 
   const [dateMovements, setDateMovements] = useState(new Date());
 
+  const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
     let isActive = true;
 
     async function getMovements() {
-      let dateFormated = format(dateMovements, 'dd/MM/yyyy');
-
+      let date = new Date(dateMovements);
+      let onlyDate = date.valueOf() + date.getTimezoneOffset() * 60 * 1000;
+      let dateFormated = format(onlyDate, 'dd/MM/yyyy');
       const receives = await api.get('/receives', {
         params: {
           date: dateFormated,
@@ -62,6 +65,9 @@ export default function Home() {
     }
   }
 
+  function filterDateMovements(dateSelected) {
+    setDateMovements(dateSelected);
+  }
   return (
     <Background>
       <Header title="Minhas movimentações" />
@@ -73,7 +79,7 @@ export default function Home() {
         renderItem={({item}) => <BalanceItem data={item} />}
       />
       <Area>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
           <Image
             source={require('../../assets/icons8-agenda-50.png')}
             style={styles.icon}
@@ -90,6 +96,12 @@ export default function Home() {
         showsHorizontalScrollIindicator={false}
         contentContainerStyle={{paddingBottom: 20}}
       />
+      <Modal visible={modalVisible} animationType="fade" transparent={true}>
+        <CalendarModal
+          setVisible={() => setModalVisible(false)}
+          handleFilter={filterDateMovements}
+        />
+      </Modal>
 
       <DarkModeToggle />
     </Background>

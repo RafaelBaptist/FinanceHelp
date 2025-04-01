@@ -40,6 +40,7 @@ export default function SignIn() {
             placeholder="Digite a sua senha"
             value={password}
             onChangeText={text => setPassword(text)}
+            secureTextEntry={true}
           />
         </AreaInput>
         <SubmitButtom activeOpacity={0.7} onPress={handleLogin}>
