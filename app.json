@@ -1,4 +1,9 @@
 {
   "name": "financas0",
-  "displayName": "financas0"
+  "displayName": "financas0",
+  "extra": {
+    "eas": {
+      "projectId": "9e8b786e-4b76-440f-8b32-74568e973039"
+    }
+  }
 }

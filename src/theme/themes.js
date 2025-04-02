@@ -11,6 +11,8 @@ export const lightTheme = {
     buttonBackgroundReceive: '#e7e7e7',
     buttonBackgroundReceiveInactive: '#fcf7f7',
     backgroundReceive: '#fff',
+    textColor: '#005732',
+    placeholderColor: '#005732',
   },
 };
 
@@ -26,5 +28,7 @@ export const darkTheme = {
     buttonBackgroundReceive: '#232a5b',
     buttonBackgroundReceiveInactive: '#1a1e3d',
     backgroundReceive: '#1a1c26',
+    textColor: '#ffffff',
+    placeholderColor: '#ffffff',
   },
 };

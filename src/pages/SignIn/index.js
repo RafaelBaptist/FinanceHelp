@@ -33,6 +33,8 @@ export default function SignIn() {
             placeholder="Digite o seu email"
             value={email}
             onChangeText={text => setEmail(text)}
+            placeholderTextColor={theme.placeholderColor}
+            style={{color: theme.textColor}}
           />
         </AreaInput>
         <AreaInput>
@@ -41,6 +43,8 @@ export default function SignIn() {
             value={password}
             onChangeText={text => setPassword(text)}
             secureTextEntry={true}
+            placeholderTextColor={theme.placeholderColor}
+            style={{color: theme.textColor}}
           />
         </AreaInput>
         <SubmitButtom activeOpacity={0.7} onPress={handleLogin}>
